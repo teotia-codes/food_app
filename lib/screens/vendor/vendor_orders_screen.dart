@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_app/screens/vendor/vendor_order_detail_screen.dart';
 import 'package:provider/provider.dart';
 import '../../providers/vendor_order_provider.dart';
 import '../../models/order_model.dart';
@@ -32,48 +33,78 @@ class VendorOrdersScreen extends StatelessWidget {
             itemBuilder: (context, index) {
               final order = orders[index];
 
-              return Card(
-                margin: const EdgeInsets.all(10),
-                child: Padding(
-                  padding: const EdgeInsets.all(12),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Order ID: ${order.orderId}",
-                        style: const TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                      const SizedBox(height: 8),
-                      Text("Total: ₹${order.totalAmount}"),
-                      Text("Status: ${order.status}"),
-                      const SizedBox(height: 10),
+              return  
+              InkWell(
+                onTap: () {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (_) => VendorOrderDetailScreen(order: order),
+      ),
+    );
+  },
+                child: Card(
+  shape: RoundedRectangleBorder(
+    borderRadius: BorderRadius.circular(16),
+  ),
+  elevation: 3,
+  margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+  child: Padding(
+    padding: const EdgeInsets.all(16),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
 
-                      // 🔥 Accept / Reject Buttons
-                      if (order.status == "placed")
-                        Row(
-                          children: [
-                            ElevatedButton(
-                              onPressed: () {
-                                provider.changeOrderStatus(
-                                    order.orderId, "accepted");
-                              },
-                              child: const Text("Accept"),
-                            ),
-                            const SizedBox(width: 10),
-                            ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.red),
-                              onPressed: () {
-                                provider.changeOrderStatus(
-                                    order.orderId, "cancelled");
-                              },
-                              child: const Text("Reject"),
-                            ),
-                          ],
-                        ),
-                    ],
-                  ),
+        Text(
+          "Order ID: ${order.orderId}",
+          style: const TextStyle(fontWeight: FontWeight.bold),
+        ),
+
+        const SizedBox(height: 8),
+
+        Text("Total: ₹${order.totalAmount}"),
+
+        const SizedBox(height: 8),
+
+        Chip(
+          label: Text(order.status),
+          backgroundColor: Colors.orange.shade100,
+        ),
+
+        const SizedBox(height: 12),
+
+        if (order.status == "placed")
+          Row(
+            children: [
+
+              Expanded(
+                child: ElevatedButton(
+                  onPressed: () {
+                    provider.changeOrderStatus(order.orderId, "accepted");
+                  },
+                  child: const Text("Accept"),
                 ),
+              ),
+
+              const SizedBox(width: 10),
+
+              Expanded(
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.red,
+                  ),
+                  onPressed: () {
+                    provider.changeOrderStatus(order.orderId, "cancelled");
+                  },
+                  child: const Text("Reject"),
+                ),
+              ),
+            ],
+          ),
+      ],
+    ),
+  ),
+)
               );
             },
           );

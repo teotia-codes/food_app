@@ -10,4 +10,9 @@ class VendorOrderProvider extends ChangeNotifier {
   Future<void> changeOrderStatus(String orderId, String status) async {
     await _service.updateOrderStatus(orderId, status);
   }
+
+  // NEW
+  Future<void> addTestOrder() async {
+    await _service.createTestOrder();
+  }
 }
