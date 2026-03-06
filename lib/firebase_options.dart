@@ -41,7 +41,7 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyDlrnI-9KDBs_pMOANzkImuXw0_K_Jo-XU',
+    apiKey: ' ',
     appId: '1:806185856011:web:7c3fbd56f915089af46b0e',
     messagingSenderId: '806185856011',
     projectId: 'foodvendorapp-27d12',
@@ -50,7 +50,7 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDGRBWAlxxTlH-mNNOvu_6-8pFavBSIN5s',
+    apiKey: ' ',
     appId: '1:806185856011:android:3edd6c371833bbeef46b0e',
     messagingSenderId: '806185856011',
     projectId: 'foodvendorapp-27d12',
@@ -58,7 +58,7 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCn_6jSomXXcHShI3T9lAsWjbRrG2fmVSk',
+    apiKey: ' ',
     appId: '1:806185856011:ios:c071df0889f85780f46b0e',
     messagingSenderId: '806185856011',
     projectId: 'foodvendorapp-27d12',
@@ -76,7 +76,7 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyDlrnI-9KDBs_pMOANzkImuXw0_K_Jo-XU',
+    apiKey: ' ',
     appId: '1:806185856011:web:c65e811a9ea326baf46b0e',
     messagingSenderId: '806185856011',
     projectId: 'foodvendorapp-27d12',
