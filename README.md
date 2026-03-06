@@ -116,6 +116,7 @@ lib/
 # 📦 Dependencies
 
 Main packages used:
+```
 provider
 cloud_firestore
 firebase_core
@@ -123,7 +124,7 @@ firebase_messaging
 flutter_local_notifications
 google_fonts
 image_picker
-
+```
 ---
 
 # 🔥 Firebase Setup
