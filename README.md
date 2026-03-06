@@ -71,6 +71,7 @@ Firestore streams update:
 ---
 
 # 🏗 Project Architecture
+```text
 lib/
 │
 ├── models/
@@ -92,7 +93,7 @@ lib/
 │ └── notification_service.dart
 │
 └── main.dart
-
+```
 ---
 
 # 🛠 Tech Stack
