@@ -67,7 +67,7 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyCn_6jSomXXcHShI3T9lAsWjbRrG2fmVSk',
+    apiKey: ' ',
     appId: '1:806185856011:ios:c071df0889f85780f46b0e',
     messagingSenderId: '806185856011',
     projectId: 'foodvendorapp-27d12',
